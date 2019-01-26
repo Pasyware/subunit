@@ -4,7 +4,6 @@ Priority: optional
 Maintainer: Debian OpenStack <team+openstack@tracker.debian.org>
 Uploaders:
  Thomas Goirand <zigo@debian.org>,
- Robert Collins <robertc@robertcollins.net>,
  Jelmer Vernooĳ <jelmer@debian.org>,
 Build-Depends:
  autoconf (>= 2.59),
