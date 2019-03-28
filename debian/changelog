@@ -8,6 +8,7 @@ subunit (1.3.0-2) experimental; urgency=medium
 
   [ Thomas Goirand ]
   * Removed Python 2 support.
+  * Correctly remove __pycache__ folder.
 
  -- Thomas Goirand <zigo@debian.org>  Thu, 28 Mar 2019 20:17:34 +0100
 

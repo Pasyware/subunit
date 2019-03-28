@@ -70,7 +70,7 @@ endif
 override_dh_auto_install-arch:
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
 	find debian/tmp/ -name "*.pyc" | xargs rm -f
-	find debian/tmp/ -name "__pycache__" | xargs rm -f
+	find debian/tmp/ -name "__pycache__" | xargs rm -rf
 	find debian/tmp/ -name "*.pyo" | xargs rm -f
 
 
