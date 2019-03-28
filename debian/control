@@ -123,7 +123,7 @@ Depends:
  python3-subunit (>= ${source:Version}),
  ${misc:Depends},
  ${perl:Depends},
- ${python:Depends},
+ ${python3:Depends},
 Recommends:
  python-junitxml,
 Description: command line tools for processing Subunit streams
