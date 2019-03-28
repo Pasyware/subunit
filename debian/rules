@@ -1,7 +1,6 @@
 #!/usr/bin/make -f
 
 # Get the supported Python versions
-PYVERS = $(shell pyversions -vr)
 PY3VERS = $(shell py3versions -vr)
 
 include /usr/share/openstack-pkg-tools/pkgos.make
@@ -9,7 +8,7 @@ export OSLO_PACKAGE_VERSION=$(VERSION)
 UPSTREAM_GIT := https://github.com/testing-cabal/subunit.git
 
 %:
-	dh $@ --with python2,python3,autoreconf
+	dh $@ --with python3,autoreconf
 
 export INSTALLDIRS=vendor
 
@@ -63,7 +62,7 @@ override_dh_auto_clean:
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 	dh_auto_test || true
-	for vers in $(PYVERS) $(PY3VERS); do \
+	for vers in $(PY3VERS); do \
 		SHELL_SHARE='./shell/share/' PYTHONPATH=./python${PYTHONPATH:+:$PYTHONPATH} python$$vers runtests.py || true; \
 	done
 endif
@@ -76,12 +75,9 @@ override_dh_auto_install-arch:
 
 
 override_dh_auto_install-indep:
-	set -e ; for vers in $(PY3VERS); do \
+	set -e ; set -x ; for vers in $(PY3VERS); do \
 		python$$vers setup.py install --install-layout=deb --root=$(CURDIR)/debian/tmp; \
 	done
-	set -e ; for vers in $(PYVERS); do \
-		python$$vers setup.py install --install-layout=deb --single-version-externally-managed --root=$(CURDIR)/debian/tmp; \
-	done
-	set -e && for i in $(CURDIR)/debian/tmp/usr/bin/* ; do \
-		sed -i 's|#![ ]*/usr/bin/python.*|#!/usr/bin/env python|' $$i ; \
-	done
+
+override_dh_python3:
+	dh_python3 --shebang=/usr/bin/python3
