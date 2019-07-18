@@ -15,8 +15,8 @@ Build-Depends:
  libtool,
  openstack-pkg-tools,
  pkg-config,
- python3-setuptools,
  python3-all,
+ python3-setuptools,
  python3-testscenarios,
  python3-testtools,
 Build-Depends-Indep:
