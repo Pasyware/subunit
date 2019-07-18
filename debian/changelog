@@ -1,6 +1,7 @@
 subunit (1.3.0-3) UNRELEASED; urgency=medium
 
   * Running wrap-and-sort -bast.
+  * Use debhelper-compat instead of debian/compat.
 
  -- Ondřej Nový <onovy@debian.org>  Thu, 18 Jul 2019 16:53:40 +0200
 
