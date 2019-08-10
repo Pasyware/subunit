@@ -7,6 +7,7 @@ subunit (1.3.0-3) UNRELEASED; urgency=medium
   [ Jelmer Vernooĳ ]
   * Remove empty debian/patches/series.
   * Bump debhelper from old 10 to 12.
+  * Set upstream metadata fields: Contact, Name.
 
  -- Ondřej Nový <onovy@debian.org>  Thu, 18 Jul 2019 16:53:40 +0200
 
