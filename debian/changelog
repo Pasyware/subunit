@@ -1,9 +1,14 @@
-subunit (1.3.0-4) UNRELEASED; urgency=medium
+subunit (1.3.0-4) unstable; urgency=medium
 
+  [ Debian Janitor ]
   * Set upstream metadata fields: Repository.
   * Remove obsolete fields Name, Contact from debian/upstream/metadata.
 
- -- Debian Janitor <janitor@jelmer.uk>  Sat, 05 Oct 2019 22:51:48 +0000
+  [ Thomas Goirand ]
+  * Allow DEB_BUILD_OPTIONS=nocheck to drop Build-Depends: check. Thanks to
+    Helmut Grohne <helmut@subdivi.de> for the patch (Closes: #816339).
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 16 Oct 2019 01:04:33 +0200
 
 subunit (1.3.0-3) unstable; urgency=medium
 

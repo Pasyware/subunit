@@ -8,7 +8,7 @@ Uploaders:
 Build-Depends:
  autoconf,
  automake,
- check,
+ check <!nocheck>,
  debhelper-compat (= 12),
  dh-python,
  libcppunit-dev,

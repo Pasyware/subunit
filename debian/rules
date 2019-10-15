@@ -59,6 +59,9 @@ override_dh_auto_clean:
 		py-compile
 	rm -rf m4
 
+override_dh_auto_configure:
+	dh_auto_configure -- --$(if $(filter nocheck,$(DEB_BUILD_OPTIONS)),dis,en)able-check
+
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
 	dh_auto_test || true
