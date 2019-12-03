@@ -1,6 +1,7 @@
 subunit (1.3.0-7) UNRELEASED; urgency=medium
 
   * Drop unnecessary dependency on dh-autoconf.
+  * Use secure URI in Homepage field.
 
  -- Debian Janitor <janitor@jelmer.uk>  Sat, 09 Nov 2019 18:39:29 +0000
 
